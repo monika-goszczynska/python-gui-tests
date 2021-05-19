@@ -27,3 +27,17 @@ class GroupHelper:
 
     def close_group_editor(self):
         self.group_editor.close()
+
+    def delete_group(self, index):
+        self.open_group_editor()
+        self.select_group(index)
+        self.group_editor.window(auto_id="uxDeleteAddressButton").click()
+
+    def select_group(self, index):
+        groups = self.get_group_list()
+        name = groups[index]
+        self.groups_node = self.group_editor.window(title="Contact groups")
+        self.groups_node.window(title=name).click()
+
+
+
