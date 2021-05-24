@@ -34,10 +34,6 @@ class GroupHelper:
         self.group_editor.window(auto_id="uxDeleteAddressButton").click()
 
     def select_group(self, index):
-        groups = self.get_group_list()
-        name = groups[index]
-        self.groups_node = self.group_editor.window(title="Contact groups")
-        self.groups_node.window(title=name).click()
-
-
-
+        tree = self.group_editor.window(auto_id="uxAddressTreeView")
+        groups = tree.window(title="Contact groups").children()
+        groups[index].select()

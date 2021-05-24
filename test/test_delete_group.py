@@ -7,7 +7,6 @@ def test_del_group(app):
     if len(old_groups) == 0:
         app.group.add_new_group("New Group")
     #usunac grupe
-    index = 0
-    app.group.delete_group(index)
+    app.group.delete_group(1)
     #pobrac liste grup
     #porownac grupy
